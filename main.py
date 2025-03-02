@@ -4,6 +4,16 @@ import random
 
 app = FastAPI()
 
+title="FastAPI GPTs Optimizer",
+    version="1.0.0",
+    openapi_url="/openapi.json",
+    servers=[{"url": "https://api-gpt-best-prompt-gpts-2.onrender.com", "description": "Production Server"}]
+)
+
+@app.get("/")
+def home():
+    return {"message": "API en ligne et fonctionnelle"}
+
 class PromptRequest(BaseModel):
     prompt: str
 
