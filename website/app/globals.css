@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  /* Glass effect utility */
+  .glass {
+    @apply bg-gray-900/40 backdrop-blur-glass border border-gray-800/50;
+  }
+
+  .glass-strong {
+    @apply bg-gray-900/70 backdrop-blur-glass border border-gray-700/50;
+  }
+
+  /* Card with 3D effect */
+  .card-3d {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800;
+    @apply shadow-card transition-transform hover:scale-[1.02] hover:shadow-glass;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg bg-gradient-primary text-white font-medium;
+    @apply hover:shadow-glass transition-all hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg glass text-gray-100 font-medium;
+    @apply hover:bg-gray-800/60 transition-all;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-lg text-gray-300 font-medium;
+    @apply hover:text-white hover:bg-gray-800/40 transition-all;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-24 px-6 lg:px-8;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+}
